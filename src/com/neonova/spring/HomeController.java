@@ -16,7 +16,7 @@ public class HomeController {
 	}
 	
 	
-	@RequestMapping("/processForm")
+	@RequestMapping("processForm")
 	public String processRequest(HttpServletRequest request, Model model) {
 		String name = "Hola, soy " + request.getParameter("studentName");
 		String address = "Actualmente vivo en " + request.getParameter("address");
@@ -32,14 +32,14 @@ public class HomeController {
 	}
 	
 	
-	@RequestMapping("/processForm2")
+	@RequestMapping("processForm2")
 	public String processRequest2(@RequestParam("studentName") String name, Model model) {
 		name = name.toUpperCase();
 		model.addAttribute("name",name);
 		return "helloWorld";
 	}
 	
-	@RequestMapping("/showForm")
+	@RequestMapping("showForm")
 	public String showForm() {
 		System.out.println(">> Hello °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*");
 		

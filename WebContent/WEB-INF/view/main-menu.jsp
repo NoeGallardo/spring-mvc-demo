@@ -6,7 +6,8 @@
 
 <hr>
 
-<a href="showForm"> Hello World</a>
+<a href="showForm"> Hello World</a><br>
+<a href="client/showFormClient">Add Client</a>
 
 </body>
 </html>

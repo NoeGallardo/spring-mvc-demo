@@ -9,12 +9,15 @@
 		First Name: <form:input path="firstName"/><br>
 		Last Name:  <form:input path="lastName"/><br>
 		Country: <form:select path="country">
-					<form:option value="Brazil">Brazil</form:option>
-					<form:option value="Mexico">Mexico</form:option>
-					<form:option value="Argentina">Argentina</form:option>
-					<form:option value="Cuba">Cuba</form:option>
-					<form:option value="Panama">Panama</form:option>
-				 </form:select>
+					<form:options items="${countryOptions}"/>
+				 </form:select><br><br>
+		
+		Elige tu Lado<br>	 
+		<form:radiobuttons path="sexo" items="${genderOptions}"/><br><br><br>
+		
+		Selecciona tus conocimiento<br>
+		<form:checkboxes items="${lenguajeOptions}" path="lenguaje"/>
+		
 		<hr>
 		<input type="submit" value="submit">
 	</form:form>

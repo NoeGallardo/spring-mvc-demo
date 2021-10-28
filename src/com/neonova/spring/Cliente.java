@@ -1,7 +1,13 @@
 package com.neonova.spring;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class Cliente {
 	private String firstName;
+	
+	@NotNull(message="Filed Required")
+	@Size(min=5, message="Filed Invalid")
 	private String lastName;
 	private String country;
 	private char sexo;

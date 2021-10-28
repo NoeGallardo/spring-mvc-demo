@@ -3,7 +3,12 @@ package com.neonova.spring;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+
 import java.util.Map;
+
+import javax.validation.Valid;
+
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -32,12 +37,22 @@ public class ClientController {
 	}
 	
 	@RequestMapping("processForm")
-	public String processForm(@ModelAttribute("cliente") Cliente cliente) {
+	public String processForm(@Valid @ModelAttribute("cliente") Cliente cliente, BindingResult br, Model model) {
+		model.addAttribute("cliente", new Cliente());
+		model.addAttribute("countryOptions",countryOptions);
+		model.addAttribute("genderOptions",genderOptions);
+		model.addAttribute("lenguajeOptions", lenguajeOptions);
 		
-		cliente.toString2();
+		if (br.hasErrors()) {
+			return "showFormCliente";
+		}
 		
-		for (String item : cliente.getLenguaje()) {
-			System.out.println(item);
+		else {
+			cliente.toString2();
+			
+			for (String item : cliente.getLenguaje()) {
+				System.out.println(item);
+			}
 		}
 		
 		return "clienteSuccess";

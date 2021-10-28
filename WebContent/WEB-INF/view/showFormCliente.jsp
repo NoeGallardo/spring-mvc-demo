@@ -1,13 +1,16 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<!DOCTYPE html>
 <html>
 <head>
 	<title>Input Data here</title>
+	
+	<style>
+		.error{color:red}
+	</style>
 </head>
 <body>
 	<form:form action="processForm" modelAttribute="cliente">
 		First Name: <form:input path="firstName"/><br>
-		Last Name:  <form:input path="lastName"/><br>
+		Last Name:  <form:input path="lastName"/><form:errors path="lastName" cssClass="error"/><br>
 		Country: <form:select path="country">
 					<form:options items="${countryOptions}"/>
 				 </form:select><br><br>

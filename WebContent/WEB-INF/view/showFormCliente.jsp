@@ -11,6 +11,9 @@
 	<form:form action="processForm" modelAttribute="cliente">
 		First Name: <form:input path="firstName"/><br>
 		Last Name:  <form:input path="lastName"/><form:errors path="lastName" cssClass="error"/><br>
+		
+		Introduce your Code: <form:input path="code"/><form:errors path="code" cssClass="error"/><br> 
+		
 		Country: <form:select path="country">
 					<form:options items="${countryOptions}"/>
 				 </form:select><br><br>

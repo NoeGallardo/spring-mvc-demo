@@ -38,7 +38,7 @@ public class ClientController {
 	
 	@RequestMapping("processForm")
 	public String processForm(@Valid @ModelAttribute("cliente") Cliente cliente, BindingResult br, Model model) {
-		model.addAttribute("cliente", new Cliente());
+		//model.addAttribute("cliente", new Cliente());
 		model.addAttribute("countryOptions",countryOptions);
 		model.addAttribute("genderOptions",genderOptions);
 		model.addAttribute("lenguajeOptions", lenguajeOptions);
@@ -49,6 +49,8 @@ public class ClientController {
 		
 		else {
 			cliente.toString2();
+			
+			System.out.println("El Code Es: "+cliente.getCode());
 			
 			for (String item : cliente.getLenguaje()) {
 				System.out.println(item);

@@ -3,6 +3,8 @@ package com.neonova.spring;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import validations.ClientCode;
+
 public class Cliente {
 	private String firstName;
 	
@@ -12,6 +14,9 @@ public class Cliente {
 	private String country;
 	private char sexo;
 	private String[] lenguaje;
+	
+	@ClientCode
+	private String code;
 
 	public Cliente(){
 
@@ -20,6 +25,14 @@ public class Cliente {
 	public void toString2(){
 		System.out.println("Hello "+firstName+" "+lastName+" from "+country+
 				" you are "+sexo);
+	}
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getFirstName() {

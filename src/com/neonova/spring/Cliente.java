@@ -4,6 +4,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import validations.ClientCode;
+import validations.PasswordCode;
 
 public class Cliente {
 	private String firstName;
@@ -17,6 +18,17 @@ public class Cliente {
 	
 	@ClientCode
 	private String code;
+	
+	@PasswordCode
+	private String password;
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 	public Cliente(){
 

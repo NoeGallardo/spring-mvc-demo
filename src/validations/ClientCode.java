@@ -17,6 +17,4 @@ public @interface ClientCode {
 	public String message() default "Must start with LUV";		//Define default Error MEssage
 	public Class<?>[] groups() default {};						//Define default groups
 	public Class<? extends Payload>[] payload() default {};		//Define default payload
-	
-	
 }
